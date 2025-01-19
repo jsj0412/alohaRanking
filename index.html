@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="title" class="title">알로하 연습 문제 랭킹</div>
+    <div id="buttonContainer" class="buttonContainer">
+        <button id="beginnerButton" onclick="changeRankingDivision('beginner')" class="button">초급반</button><button
+            id="intermediateButton" onclick="changeRankingDivision('intermediate')" class="button">중급반</button><button
+            id="advancedButton" onclick="changeRankingDivision('advanced')" class="button">고급반</button>
+    </div>
+
+
+    <div id="page"></div> <!-- 새 div들이 추가될 부모 컨테이너 -->
+    <script src="code.js">
+    </script>
+    <script>
+        var currentDivision = 'beginner';
+        colorButton(currentDivision);
+        for (let i = 0; i <= getCurrentUserNum(currentDivision); i++) {
+            const newDiv = document.createElement('div'); // 새로운 div 생성
+            newDiv.id = `container${i}`; // ID 설정
+            page.appendChild(newDiv); // 부모 컨테이너에 추가
+            newDiv.className = 'container';
+
+            for (let j = 1; j <= 3; j++) {
+                const childDiv = document.createElement('div');
+                childDiv.id = `div${i},${j}`;
+                newDiv.appendChild(childDiv);
+                childDiv.className = `box${j}`;
+            }
+        }
+
+        document.getElementById('div0,1').textContent = '등수';
+        document.getElementById('div0,2').textContent = '아이디';
+        document.getElementById('div0,2').className = 'box2_noHover';
+        document.getElementById('div0,3').textContent = '푼 연습 문제';
+        updateSolvedNum();
+
+    </script>
+
+</body>
+
+</html>
