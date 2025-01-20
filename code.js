@@ -8,13 +8,17 @@ var beginnerProblemIdList = ['1000', '1001', '1002', '1003', '1004', '1005', '10
 var intermediateProblemIdList = ['1000', '1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008', '1009', '1010'];
 var advancedProblemIdList = ['1000', '1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008', '1009', '1010'];
 
-const proxyUrl = 'http://cors-anywhere.herokuapp.com/';
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 const targetUrl = 'https://solved.ac/api/v3/search/problem?direction=asc&sort=id';
 const url = proxyUrl + targetUrl;
 
 const options = {
     method: 'GET',
-    headers: { Accept: 'application/json' }
+    headers: {
+        'Origin': 'https://jsj0412.github.io/alohaRanking/',
+        'X-Requested-With': 'XMLHttpRequest',
+        Accept: 'application/json'
+    }
 };
 
 async function fetchData(queryUserId, queryProblemList) {
