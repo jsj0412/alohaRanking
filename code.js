@@ -11,9 +11,7 @@ var advancedProblemIdList = ['1000', '1001', '1002', '1003', '1004', '1005', '10
 
 
 
-const proxyUrl = 'http://cors-anywhere.herokuapp.com/';
-const targetUrl = 'https://solved.ac/api/v3/search/problem?direction=asc&sort=id';
-const url = proxyUrl + targetUrl;
+const url = 'https://solved.ac/api/v3/search/problem?direction=asc&sort=id';
 
 const options = {
     method: 'GET',
