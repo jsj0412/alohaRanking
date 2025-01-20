@@ -157,5 +157,5 @@ function colorButton(currentDivision) {
 
 }
 
-setInterval(updateSolvedNum, 30000);
+setInterval(updateSolvedNum, 120000);
 
